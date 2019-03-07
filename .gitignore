@@ -6,6 +6,8 @@
 # Covers JetBrains IDEs IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference httpsintellij-support.jetbrains.comhcen-usarticles206544839
 
+.idea/
+
 # User-specific stuff
 .ideaworkspace.xml
 .ideatasks.xml
