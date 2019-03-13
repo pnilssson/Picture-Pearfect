@@ -1,0 +1,27 @@
+<svg width="60" height="30" xmlns="http://www.w3.org/2000/svg">
+ <metadata id="metadata3422">image/svg+xml</metadata>
+
+ <clipPath id="t">
+  <path id="path3406" d="m30,15l30,0l0,15l-30,-15zl30,30l-30,0l0,-30zl-30,30l0,-15l30,-15zl-30,0l30,0z"/>
+ </clipPath>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path fill="#00247d" d="m0,0l0,30l60,0l0,-30l-60,0z" id="path3408"/>
+  <g id="g3504" transform="matrix(0.99923007,0,0,0.99796116,-41.704693,34.67408) ">
+   <path clip-rule="nonzero" fill="#ffffff" fill-rule="nonzero" stroke-width="6" stroke-miterlimit="4" stroke-dashoffset="0" id="path3410" d="m41.7438,-34.73613l-0.0052,3.39961l23.29945,11.65601l-23.29292,11.64564l-0.0083,3.33903l6.70998,0.0081l23.2991,-11.64112l23.34047,11.64133l6.69512,0.0039l-0.00019,-3.31976l-23.32556,-11.67709l23.3243,-11.65854l0.003,-3.4047l-6.67159,-0.0012l-23.36561,11.7109l-23.40851,-11.70518l-6.59354,0.00307z"/>
+   <g transform="matrix(1.000467,0,0,1.0025461,-90.083492,-1.0167386) " id="g3475">
+    <path fill="#cf142b" stroke-width="0" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" d="m161.74139,-18.61294l4.47326,-0.01609l25.56234,12.80053l-0.0419,2.1538l-29.99365,-14.93824l-0.00005,0zm25.50494,-15.02954l4.33491,0.0062l-29.84225,15.0304l-0.002,-2.25259l25.50972,-12.78403l-0.00038,0.00002zm-42.74835,8.56799l-12.73919,-6.38324l0,-2.18479l29.98658,15.02448l-4.41926,0.0058l-12.82813,-6.46226l0,0.00001zm17.24195,6.45663l0,2.18478l-25.50624,12.77269l-4.46056,0.00281l29.9668,-14.96028z" id="path3473"/>
+   </g>
+  </g>
+  <g id="g3457" transform="matrix(0.99923007,0,0,0.99796116,-71.704693,6.7005857) ">
+   <g id="g3500">
+    <path clip-rule="nonzero" fill="#ffffff" fill-rule="nonzero" stroke-width="10" stroke-miterlimit="4" stroke-dashoffset="0" id="path3414" d="m96.77921,-6.71427l0,10.02043l-25.01926,0l0,10.02042l25.01926,0l0,10.02043l10.0077,0l0,-10.02043l25.01926,0l0,-10.02042l-25.01926,0l0,-10.02043l-10.0077,0z"/>
+    <path clip-rule="nonzero" fill="#cf142b" fill-rule="nonzero" stroke-width="6" stroke-miterlimit="4" stroke-dashoffset="0" id="path3416" d="m98.78075,-6.71427l0,12.02451l-27.0208,0l0,6.01226l27.0208,0l0,12.02451l6.00462,0l0,-12.02451l27.0208,0l0,-6.01226l-27.0208,0l0,-12.02451l-6.00462,0z"/>
+   </g>
+  </g>
+ </g>
+</svg>
