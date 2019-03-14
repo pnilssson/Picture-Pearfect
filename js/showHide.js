@@ -1,5 +1,5 @@
 let menuSection, fruit, animal, number,  easy, medium, hard, swedish,
-    english, stats, startGame, gameSection, restart,runAgain, playMenu;
+    english, stats, startGame, gameSection, restart,runAgain, playMenu, scorePanel;
 
 menuSection = document.getElementById("menu-section");
 fruit = document.getElementById("fruit-btn");
@@ -16,6 +16,7 @@ restart = document.getElementById("restart");
 gameSection = document.getElementById("game-section");
 playMenu = document.getElementById("menu-while-playing");
 runAgain = document.getElementById("runAgain");
+scorePanel = document.getElementById("score-panel");
 
 let fruitSelected = Boolean(false);
 let animalSelected = Boolean(false);
@@ -95,6 +96,7 @@ startGame.addEventListener('click', function () {
     menuSection.style.display = "none";
     playMenu.style.display = "flex";
     gameSection.style.display = "block";
+    scorePanel.style.display = "flex";
     if(fruitSelected && difficulty !== 0){
         if(swedishSelected){
             createMemoryGame(fruitArray, difficulty);
@@ -125,6 +127,7 @@ restart.addEventListener('click', function () {
     menuSection.style.display = "grid";
     playMenu.style.display = "none";
     gameSection.style.display = "none";
+    scorePanel.style.display = "none";
 });
 
 runAgain.addEventListener('click', function () {
