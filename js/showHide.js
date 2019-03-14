@@ -1,10 +1,10 @@
-let menuSection, fruit, animal, number, easy, medium, hard, swedish,
+let menuSection, fruit, animal, number,  easy, medium, hard, swedish,
     english, stats, startGame, gameSection, restart,runAgain, playMenu;
 
 menuSection = document.getElementById("menu-section");
-fruit = document.getElementById("fruit");
-animal = document.getElementById("animal");
-number = document.getElementById("number");
+fruit = document.getElementById("fruit-btn");
+animal = document.getElementById("animal-btn");
+number = document.getElementById("number-btn");
 easy = document.getElementById("easy");
 medium = document.getElementById("medium");
 hard = document.getElementById("hard");
@@ -27,29 +27,29 @@ let englishSelected = Boolean(false);
 let swedishSelected = Boolean(false);
 fruit.addEventListener('click', function(){
     fruitSelected = !fruitSelected;
-    fruit.style.border = '2px solid darkseagreen';
+    fruit.style.background = "darkseagreen";
     animalSelected = Boolean(false);
-    animal.style.border = '';
+    animal.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa))';
     numberSelected = Boolean(false);
-    number.style.border = '';
+    number.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa))';
 });
 
 animal.addEventListener('click', function(){
     animalSelected = !animalSelected;
-    animal.style.border = '2px solid darkseagreen';
+    animal.style.background = 'darkseagreen';
     fruitSelected = Boolean(false);
-    fruit.style.border = '';
+    fruit.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa))';
     numberSelected = Boolean(false);
-    number.style.border = '';
+    number.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa))';
 });
 
 number.addEventListener('click', function(){
     numberSelected = !numberSelected;
-    number.style.border = '2px solid darkseagreen';
+    number.style.background = 'darkseagreen';
     animalSelected = Boolean(false);
-    animal.style.border = '';
+    animal.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa))';
     fruitSelected = Boolean(false);
-    fruit.style.border = '';
+    fruit.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa))';
 });
 
 easy.addEventListener('click', function(){
