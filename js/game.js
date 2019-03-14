@@ -2,6 +2,7 @@ const grid = document.createElement("div");
 grid.setAttribute('class', 'grid');
 
 gameSection.appendChild(grid);
+var winCond = 0;
 
 const createMemoryGame = (array, difficulty) => {
     let newArray = array.slice((difficulty - 1));
@@ -75,6 +76,7 @@ const match = () => {
     selected.forEach(card => {
         card.classList.add('match');
     });
+    winChecker();
 };
 
 const resetGuesses = () => {
@@ -94,5 +96,24 @@ const doNotResetMatch = () => {
     count = 0;
 };
 
-
+const winChecker = () => {
+    if(difficulty==9) {
+        winCond += 2;
+        if(winCond==12) {
+            alert("Grattis du vann!");
+        }
+    }
+    if(difficulty==5) {
+        winCond += 2;
+        if(winCond==16) {
+            alert("Grattis du vann!");
+        }
+    }
+    if(difficulty==1) {
+        winCond += 2;
+        if(winCond==20) {
+            alert("Grattis du vann!");
+        }
+    }
+}
 
