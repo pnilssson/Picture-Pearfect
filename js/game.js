@@ -64,6 +64,7 @@ grid.addEventListener('click', function (event) {
     // Add selected class
     if (count < 2) {
         count++;
+        // Call for moveCounter function to count moves per game
         moveCounter();
         if (count === 1) {
             firstGuess = clicked.parentNode.dataset.name;
