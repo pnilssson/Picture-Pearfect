@@ -258,8 +258,9 @@ a:visited {
 .gameMenuWhilePlaying {
   margin-top: 3em;
   display: none;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 
