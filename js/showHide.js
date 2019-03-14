@@ -8,8 +8,8 @@ number = document.getElementById("number-btn");
 easy = document.getElementById("easy");
 medium = document.getElementById("medium");
 hard = document.getElementById("hard");
-swedish = document.getElementById("swedish");
-english = document.getElementById("english");
+swedish = document.getElementById("swedish-flag");
+english = document.getElementById("uk-flag");
 stats = document.getElementById("stats");
 startGame = document.getElementById("start-game");
 restart = document.getElementById("restart");
@@ -25,6 +25,7 @@ let difficulty = 0;
 
 let englishSelected = Boolean(false);
 let swedishSelected = Boolean(false);
+
 fruit.addEventListener('click', function(){
     fruitSelected = !fruitSelected;
     fruit.style.background = "darkseagreen";
