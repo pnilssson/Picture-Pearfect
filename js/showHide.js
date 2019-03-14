@@ -62,7 +62,7 @@ medium.addEventListener('click', function(){
     easy.style.background = "-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e))";
     hard.style.background = '-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f))';
     difficulty = 0;
-    difficulty = 7;
+    difficulty = 5;
 });
 
 hard.addEventListener('click', function(){
@@ -98,3 +98,4 @@ restart.addEventListener('click', function () {
     playMenu.style.display = "none";
     gameSection.style.display = "none";
 });
+
