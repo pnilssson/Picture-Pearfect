@@ -4,6 +4,10 @@ grid.setAttribute('class', 'grid');
 gameSection.appendChild(grid);
 var winCond = 0;
 
+// declaring move variable
+let moves = 0;
+let counter = document.querySelector(".moves");
+
 const createMemoryGame = (array, difficulty) => {
     let newArray = array.slice((difficulty - 1));
     newArray.sort(() => 0.5 - Math.random());
@@ -29,6 +33,18 @@ const createMemoryGame = (array, difficulty) => {
         grid.appendChild(card);
         card.appendChild(front);
         card.appendChild(back);
+
+        // reset moves
+        moves = 0;
+        counter.innerHTML = moves;
+
+        //reset timer
+        second = 0;
+        minute = 0;
+        hour = 0;
+        var timer = document.querySelector(".timer");
+        timer.innerHTML = "0 mins 0 secs";
+        clearInterval(interval);
     }};
 
 let firstGuess = '';
@@ -48,6 +64,7 @@ grid.addEventListener('click', function (event) {
     // Add selected class
     if (count < 2) {
         count++;
+        moveCounter();
         if (count === 1) {
             firstGuess = clicked.parentNode.dataset.name;
             console.log(firstGuess);
@@ -95,6 +112,38 @@ const doNotResetMatch = () => {
     secondGuess = '';
     count = 0;
 };
+
+// @description count player's moves
+function moveCounter() {
+    moves++;
+    counter.innerHTML = moves;
+    //start timer on first click
+    if (moves == 1) {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        startTimer();
+    }
+}
+
+// @description game timer
+var second = 0, minute = 0; hour = 0;
+var timer = document.querySelector(".timer");
+var interval;
+function startTimer(){
+    interval = setInterval(function(){
+        timer.innerHTML = minute+"mins "+second+"secs";
+        second++;
+        if(second == 60){
+            minute++;
+            second=0;
+        }
+        if(minute == 60){
+            hour++;
+            minute = 0;
+        }
+    },1000);
+}
 
 const winChecker = () => {
     if(difficulty==9) {

@@ -24,6 +24,16 @@ a:visited {
   color: #FFF;
 }
 
+.score-panel {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.timer {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
 .container{
   display: grid;
   grid-template-columns: repeat(6, 1fr);
