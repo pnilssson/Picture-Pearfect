@@ -1,5 +1,5 @@
 let menuSection, fruit, animal, number, easy, medium, hard, swedish,
-    english, stats, startGame, gameSection, restart, playMenu;
+    english, stats, startGame, gameSection, restart,runAgain, playMenu;
 
 menuSection = document.getElementById("menu-section");
 fruit = document.getElementById("fruit");
@@ -15,6 +15,7 @@ startGame = document.getElementById("start-game");
 restart = document.getElementById("restart");
 gameSection = document.getElementById("game-section");
 playMenu = document.getElementById("menu-while-playing");
+runAgain = document.getElementById("runAgain");
 
 let fruitSelected = Boolean(false);
 let animalSelected = Boolean(false);
@@ -99,3 +100,22 @@ restart.addEventListener('click', function () {
     gameSection.style.display = "none";
 });
 
+runAgain.addEventListener('click', function () {
+    removeGrid();
+    if(fruitSelected && difficulty !== 0){
+        createMemoryGame(fruitArray, difficulty);
+    }else if(animalSelected && difficulty !== 0){
+        createMemoryGame(animalArray, difficulty);
+    }else if(numberSelected && difficulty !== 0) {
+        createMemoryGame(numbersArray, difficulty);
+    }
+});
+
+function removeGrid(){
+    let amountOfCard = document.querySelectorAll('#cardDiv').length;
+    console.log(amountOfCard);
+    for(let i = 0; i < amountOfCard; i++){
+        let gameCard = document.getElementById("cardDiv");
+        gameCard.remove();
+    }
+}

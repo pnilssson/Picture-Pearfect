@@ -11,6 +11,7 @@ const createMemoryGame = (array, difficulty) => {
         let item = newArray[i];
         // Create card element with the name dataset
         const card = document.createElement('div');
+        card.setAttribute("id", "cardDiv");
         card.classList.add('card');
         card.dataset.name = item.name;
 
