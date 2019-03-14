@@ -23,6 +23,8 @@ let numberSelected = Boolean(false);
 
 let difficulty = 0;
 
+let englishSelected = Boolean(false);
+let swedishSelected = Boolean(false);
 fruit.addEventListener('click', function(){
     fruitSelected = !fruitSelected;
     fruit.style.border = '2px solid darkseagreen';
@@ -74,18 +76,42 @@ hard.addEventListener('click', function(){
     difficulty = 1;
 });
 
+swedish.addEventListener('click', function () {
+    swedishSelected = !swedishSelected;
+    swedish.style.border = '2px solid darkseagreen';
+    englishSelected = false;
+    english.style.border = '';
+});
 
+english.addEventListener('click', function () {
+    englishSelected = !englishSelected;
+    english.style.border = '2px solid darkseagreen';
+    swedishSelected = false;
+    swedish.style.border = '';
+});
 
 startGame.addEventListener('click', function () {
     menuSection.style.display = "none";
     playMenu.style.display = "flex";
     gameSection.style.display = "block";
     if(fruitSelected && difficulty !== 0){
-        createMemoryGame(fruitArray, difficulty);
+        if(swedishSelected){
+            createMemoryGame(fruitArray, difficulty);
+        }else{
+            createMemoryGame(fruitArrayEng, difficulty);
+        }
     }else if(animalSelected && difficulty !== 0){
-        createMemoryGame(animalArray, difficulty);
+        if(swedishSelected){
+            createMemoryGame(animalArray, difficulty);
+        } else {
+            createMemoryGame(animalArrayEng, difficulty);
+        }
     }else if(numberSelected && difficulty !== 0){
-        createMemoryGame(numbersArray, difficulty);
+        if (swedishSelected) {
+            createMemoryGame(numbersArray, difficulty);
+        } else {
+            createMemoryGame(numbersArrayEng, difficulty);
+        }
     }else{
         alert('Var vänlig välj vilka brickor & vilken svårighetsgrad du vill spela med.');
         menuSection.style.display = "grid";
