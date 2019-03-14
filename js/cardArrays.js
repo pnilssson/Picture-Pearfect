@@ -87,7 +87,7 @@ const fruitArrayEng = [{
 },
     {
         'name': 'orange',
-        'img': 'img/fruktbilder/txt-orange.png',
+        'img': 'img/fruktbilder/txt_orange.png',
     },
     {
         'name': 'ananas',
@@ -95,7 +95,7 @@ const fruitArrayEng = [{
     },
     {
         'name': 'ananas',
-        'img': 'img/fruktbilder/txt-pineapple.png',
+        'img': 'img/fruktbilder/txt_pineapple.png',
     },
     {
         'name': 'apple',
@@ -103,7 +103,7 @@ const fruitArrayEng = [{
     },
     {
         'name': 'apple',
-        'img': 'img/fruktbilder/txt-apple.png',
+        'img': 'img/fruktbilder/txt_apple.png',
     },
     {
         'name': 'banana',
@@ -111,7 +111,7 @@ const fruitArrayEng = [{
     },
     {
         'name': 'banana',
-        'img': 'img/fruktbilder/txt-banana.png',
+        'img': 'img/fruktbilder/txt_banana.png',
     },
     {
         'name': 'clementine',
@@ -119,7 +119,7 @@ const fruitArrayEng = [{
     },
     {
         'name': 'clementine',
-        'img': 'img/fruktbilder/txt-clementine.png',
+        'img': 'img/fruktbilder/txt_clementine.png',
     },
     {
         'name': 'kiwi',
@@ -143,7 +143,7 @@ const fruitArrayEng = [{
     },
     {
         'name': 'plums',
-        'img': 'img/fruktbilder/txt-plums.png',
+        'img': 'img/fruktbilder/txt_plum.png',
     },
     {
         'name': 'watermelon',
@@ -151,7 +151,7 @@ const fruitArrayEng = [{
     },
     {
         'name': 'watermelon',
-        'img': 'img/fruktbilder/txt-watermelon.png',
+        'img': 'img/fruktbilder/txt_watermelon.png',
     },
 ];
 
@@ -244,7 +244,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'cat',
-        'img': 'img/djurbilder/txt-cat.png',
+        'img': 'img/djurbilder/txt_cat.png',
     },
     {
         'name': 'chicken',
@@ -252,7 +252,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'chicken',
-        'img': 'img/djurbilder/txt-chicken.png',
+        'img': 'img/djurbilder/txt_chicken.png',
     },
     {
         'name': 'cow',
@@ -260,7 +260,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'cow',
-        'img': 'img/djurbilder/txt-cow.png',
+        'img': 'img/djurbilder/txt_cow.png',
     },
     {
         'name': 'dog',
@@ -268,7 +268,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'dog',
-        'img': 'img/djurbilder/txt-dog.png',
+        'img': 'img/djurbilder/txt_dog.png',
     },
     {
         'name': 'donkey',
@@ -276,7 +276,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'donkey',
-        'img': 'img/djurbilder/txt-donkey.png',
+        'img': 'img/djurbilder/txt_donkey.png',
     },
     {
         'name': 'goat',
@@ -284,7 +284,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'goat',
-        'img': 'img/djurbilder/txt-goat.png',
+        'img': 'img/djurbilder/txt_goat.png',
     },
     {
         'name': 'horse',
@@ -292,7 +292,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'horse',
-        'img': 'img/djurbilder/txt-horse.png',
+        'img': 'img/djurbilder/txt_horse.png',
     },
     {
         'name': 'pig',
@@ -300,7 +300,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'pig',
-        'img': 'img/djurbilder/txt-pig.png',
+        'img': 'img/djurbilder/txt_pig.png',
     },
     {
         'name': 'sheep',
@@ -308,7 +308,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'sheep',
-        'img': 'img/djurbilder/txt-sheep.png',
+        'img': 'img/djurbilder/txt_sheep.png',
     },
     {
         'name': 'rabbit',
@@ -316,7 +316,7 @@ const animalArrayEng = [{
     },
     {
         'name': 'rabbit',
-        'img': 'img/djurbilder/txt-rabbit.png',
+        'img': 'img/djurbilder/txt_rabbit.png',
     },
 ];
 
@@ -409,7 +409,7 @@ const numbersArrayEng = [{
 },
     {
         'name': 'zero',
-        'img': 'img/siffrorbilder/txt-zero.png',
+        'img': 'img/siffrorbilder/txt_zero.png',
     },
     {
         'name': 'one',
@@ -417,7 +417,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'one',
-        'img': 'img/siffrorbilder/txt-one.png',
+        'img': 'img/siffrorbilder/txt_one.png',
     },
     {
         'name': 'two',
@@ -425,7 +425,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'two',
-        'img': 'img/siffrorbilder/txt-two.png',
+        'img': 'img/siffrorbilder/txt_two.png',
     },
     {
         'name': 'three',
@@ -433,7 +433,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'three',
-        'img': 'img/siffrorbilder/txt-three.png',
+        'img': 'img/siffrorbilder/txt_three.png',
     },
     {
         'name': 'four',
@@ -441,7 +441,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'four',
-        'img': 'img/siffrorbilder/txt-four.png',
+        'img': 'img/siffrorbilder/txt_four.png',
     },
     {
         'name': 'five',
@@ -449,7 +449,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'five',
-        'img': 'img/siffrorbilder/txt-five.png',
+        'img': 'img/siffrorbilder/txt_five.png',
     },
     {
         'name': 'six',
@@ -457,7 +457,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'six',
-        'img': 'img/siffrorbilder/txt-six.png',
+        'img': 'img/siffrorbilder/txt_six.png',
     },
     {
         'name': 'seven',
@@ -465,7 +465,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'seven',
-        'img': 'img/siffrorbilder/txt-seven.png',
+        'img': 'img/siffrorbilder/txt_seven.png',
     },
     {
         'name': 'eight',
@@ -473,7 +473,7 @@ const numbersArrayEng = [{
     },
     {
         'name': 'eight',
-        'img': 'img/siffrorbilder/txt-eight.png',
+        'img': 'img/siffrorbilder/txt_eight.png',
     },
     {
         'name': 'nine',
@@ -481,6 +481,6 @@ const numbersArrayEng = [{
     },
     {
         'name': 'nine',
-        'img': 'img/siffrorbilder/txt-nine.png',
+        'img': 'img/siffrorbilder/txt_nine.png',
     },
 ];

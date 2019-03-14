@@ -115,5 +115,5 @@ const winChecker = () => {
             alert("Grattis du vann!");
         }
     }
-}
+};
 
