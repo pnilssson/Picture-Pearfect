@@ -304,9 +304,16 @@ a:visited {
   justify-content: center;
 }
 
+.congratulation-msg {
+  margin: 1em 0 1em 0;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 
 @media (min-width: 768px) {
-
   .bigBtnEasy {
     margin: 0.5em 0.5em 2em 0.5em;
   }
@@ -339,6 +346,9 @@ a:visited {
   }
 
   .grid {
+    width: 580px;
+  }
+  .congratulation-msg h2 {
     width: 580px;
   }
 }

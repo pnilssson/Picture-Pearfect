@@ -2,7 +2,7 @@ const grid = document.createElement("div");
 grid.setAttribute('class', 'grid');
 
 gameSection.appendChild(grid);
-var winCond = 0;
+let winCond = 0;
 
 // declaring move variable
 let moves = 0;
@@ -146,23 +146,30 @@ function startTimer(){
     },1000);
 }
 
+const congratulationMsg = document.getElementById("congratulation-msg");
 const winChecker = () => {
     if(difficulty==9) {
         winCond += 2;
         if(winCond==12) {
-            alert("Grattis du vann!");
+            scorePanel.style.display = "none";
+            congratulationMsg.style.display = "flex";
+            congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
         }
     }
     if(difficulty==5) {
         winCond += 2;
         if(winCond==16) {
-            alert("Grattis du vann!");
+            scorePanel.style.display = "none";
+            congratulationMsg.style.display = "flex";
+            congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
         }
     }
     if(difficulty==1) {
         winCond += 2;
         if(winCond==20) {
-            alert("Grattis du vann!");
+            scorePanel.style.display = "none";
+            congratulationMsg.style.display = "flex";
+            congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
         }
     }
 };

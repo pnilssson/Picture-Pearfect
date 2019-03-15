@@ -133,10 +133,22 @@ restart.addEventListener('click', function () {
 runAgain.addEventListener('click', function () {
     removeGrid();
     if(fruitSelected && difficulty !== 0){
+        scorePanel.style.display = "flex";
+        congratulationMsg.style.display = "none";
+        congratulationMsg.innerHTML = "";
+        winCond = 0;
         createMemoryGame(fruitArray, difficulty);
     }else if(animalSelected && difficulty !== 0){
+        scorePanel.style.display = "flex";
+        congratulationMsg.style.display = "none";
+        congratulationMsg.innerHTML = "";
+        winCond = 0;
         createMemoryGame(animalArray, difficulty);
     }else if(numberSelected && difficulty !== 0) {
+        scorePanel.style.display = "flex";
+        congratulationMsg.style.display = "none";
+        congratulationMsg.innerHTML = "";
+        winCond = 0;
         createMemoryGame(numbersArray, difficulty);
     }
 });
