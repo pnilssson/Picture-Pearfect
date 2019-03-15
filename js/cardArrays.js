@@ -90,6 +90,14 @@ const fruitArrayEng = [{
         'img': 'img/fruktbilder/txt_orange.png',
     },
     {
+        'name': 'cantaloupe',
+        'img': 'img/fruktbilder/cantaloupe.png',
+    },
+    {
+        'name': 'cantaloupe',
+        'img': 'img/fruktbilder/txt_cantaloupe.png',
+    },
+    {
         'name': 'ananas',
         'img': 'img/fruktbilder/pineapple.png',
     },
