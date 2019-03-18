@@ -8,9 +8,14 @@ let winCond = 0;
 let moves = 0;
 let counter = document.querySelector(".moves");
 
-const createMemoryGame = (array, difficulty) => {
+let audio = '';
+let selectedArray = new Array();
+
+const createMemoryGame = (array, difficulty, soundArray) => {
     let newArray = array.slice((difficulty - 1));
     newArray.sort(() => 0.5 - Math.random());
+
+    selectedArray = soundArray;
 
     for(let i = 0; i < newArray.length; i++){
         let item = newArray[i];
@@ -45,7 +50,23 @@ const createMemoryGame = (array, difficulty) => {
         var timer = document.querySelector(".timer");
         timer.innerHTML = "0 mins 0 secs";
         clearInterval(interval);
-    }};
+    }
+    for(let j = 0; j<selectedArray.length; j++){
+        let sound = selectedArray[j];
+
+        audio = document.createElement('audio');
+        audio.setAttribute('id', 'audioElement');
+        audio.classList.add('audio');
+        audio.dataset.name = sound.name;
+
+        audio.style.display = "none";
+        audio.autoplay = true;
+
+        grid.appendChild(audio);
+        console.log(audio);
+
+    };
+};
 
 let firstGuess = '';
 let secondGuess = '';
@@ -78,6 +99,7 @@ grid.addEventListener('click', function (event) {
         // If both guesses are not empty...
         if (firstGuess !== '' && secondGuess !== '') {
             if (firstGuess === secondGuess) {
+                runSound();
                 setTimeout(match, delay);
                 setTimeout(doNotResetMatch, delay);
             } else {
@@ -88,6 +110,21 @@ grid.addEventListener('click', function (event) {
         previousTarget = clicked;
     }
 });
+
+function runSound(){
+    audio.dataset.name = secondGuess;
+    console.log(audio.dataset.name);
+
+    for (let k = 0; k<selectedArray.length; k++){
+        if(selectedArray[k].name===audio.dataset.name){
+            console.log(selectedArray[k].name===audio.dataset.name);
+            console.log(selectedArray[k].audio);
+            var sound = document.getElementById('audioElement');
+            sound.src = selectedArray[k].audio;
+            sound.play();
+        }
+    }
+}
 
 const match = () => {
     let selected = document.querySelectorAll('.selected');

@@ -99,21 +99,21 @@ startGame.addEventListener('click', function () {
     scorePanel.style.display = "flex";
     if(fruitSelected && difficulty !== 0){
         if(swedishSelected){
-            createMemoryGame(fruitArray, difficulty);
+            createMemoryGame(fruitArray, difficulty, fruitAudioArray);
         }else{
-            createMemoryGame(fruitArrayEng, difficulty);
+            createMemoryGame(fruitArrayEng, difficulty, fruitAudioArrayENG);
         }
     }else if(animalSelected && difficulty !== 0){
         if(swedishSelected){
-            createMemoryGame(animalArray, difficulty);
+            createMemoryGame(animalArray, difficulty, animalAudioArray);
         } else {
-            createMemoryGame(animalArrayEng, difficulty);
+            createMemoryGame(animalArrayEng, difficulty, animalAudioArrayENG);
         }
     }else if(numberSelected && difficulty !== 0){
         if (swedishSelected) {
-            createMemoryGame(numbersArray, difficulty);
+            createMemoryGame(numbersArray, difficulty, numberAudioArray);
         } else {
-            createMemoryGame(numbersArrayEng, difficulty);
+            createMemoryGame(numbersArrayEng, difficulty, numberAudioArrayENG);
         }
     }else{
         alert('Var vänlig välj vilka brickor & vilken svårighetsgrad du vill spela med.');
@@ -130,6 +130,7 @@ restart.addEventListener('click', function () {
     scorePanel.style.display = "none";
 });
 
+//note: this section needs to be updated -> not ideal(always runs Swedish)
 runAgain.addEventListener('click', function () {
     removeGrid();
     if(fruitSelected && difficulty !== 0){
@@ -137,19 +138,19 @@ runAgain.addEventListener('click', function () {
         congratulationMsg.style.display = "none";
         congratulationMsg.innerHTML = "";
         winCond = 0;
-        createMemoryGame(fruitArray, difficulty);
+        createMemoryGame(fruitArray, difficulty, fruitAudioArray);
     }else if(animalSelected && difficulty !== 0){
         scorePanel.style.display = "flex";
         congratulationMsg.style.display = "none";
         congratulationMsg.innerHTML = "";
         winCond = 0;
-        createMemoryGame(animalArray, difficulty);
+        createMemoryGame(animalArray, difficulty, animalAudioArray);
     }else if(numberSelected && difficulty !== 0) {
         scorePanel.style.display = "flex";
         congratulationMsg.style.display = "none";
         congratulationMsg.innerHTML = "";
         winCond = 0;
-        createMemoryGame(numbersArray, difficulty);
+        createMemoryGame(numbersArray, difficulty, numberAudioArray);
     }
 });
 
