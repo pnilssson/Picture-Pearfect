@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture Pearfect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+<section class="container" id="menu-section">
+    <div class="memory-game-logo grid-center">
+        <img class="memory-game-logo-img" src="img/logo-transparent-small.png">
+    </div>
+    <div class="grid-center">
+        <h2>Välj brickor, svårighetsgrad samt språk att spela med.</h2>
+    </div>
+    <div class="memory-game-mode grid-center">
+        <div class="btnBrick" title="Frukt" id="fruit-btn"><img src="img/ananas-transparent.png" id="fruit" class="levelButton scale"></div>
+        <div class="btnBrick" title="Djur" id="animal-btn"><img src="img/pig-transparent.png" id="animal" class="levelButton scale"></div>
+        <div class="btnBrick" title="Siffror" id="number-btn"><img src="img/five-transparent.png" id="number" class="levelButton scale"></div>
+    </div>
+    <div class="grid-center">
+    </div>
+    <div class="memory-game-difficulty grid-center">
+        <div class="bigBtnEasy scale" id="easy">Lätt</div>
+        <div class="bigBtnMed scale" id="medium">Medel</div>
+        <div class="bigBtnHard scale" id="hard">Svårt</div>
+    </div>
+    <div class="grid-center">
+    </div>
+        <div class="memory-game-language grid-center">
+        <div class="btn flagDiv" id="swedish" title="Svenska"><img src="img/swedishflag.svg" class="flag scale" id="swedish-flag"></div>
+        <div class="btn flagDiv" id="english" title="Engelska"><img src="img/ukflag.svg" class="flag scale" id="uk-flag"></div>
+    </div>
+    <div class="memory-game-other grid-center">
+        <div class="bigBtnBlue scale" id="stats">Statistik</div>
+        <div class="bigBtnGreen scale" id="start-game">Spela</div>
+    </div>
+</section>
+
+<article class="gameMenuWhilePlaying" id="menu-while-playing">
+    <a href="index.html" class="bigBtnBlue resetButton" id="restart">Återgå</a>
+    <a href="#" class="bigBtnBlue resetButton" id="runAgain">Börja om</a>
+</article>
+
+<article class="score-panel" id="score-panel">
+    <span class="moves">0</span> Move(s)
+    <div class="timer"></div>
+</article>
+
+<article class="congratulation-msg" id="congratulation-msg"></article>
+
+<section class="game-section" id="game-section"></section>
+
+<script src="js/cardArrays.js"></script>
+<script src="js/showHide.js"></script>
+<script src="js/game.js"></script>
+<script src="js/audioArrays.js"></script>
+</body>
+</html>
