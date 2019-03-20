@@ -96,20 +96,22 @@ startGame.addEventListener('click', function () {
     menuSection.style.display = "none";
     playMenu.style.display = "flex";
     gameSection.style.display = "block";
-    scorePanel.style.display = "flex";
     if(fruitSelected && difficulty !== 0){
+        scorePanel.style.display = "flex";
         if(swedishSelected){
             createMemoryGame(fruitArray, difficulty, fruitAudioArray);
         }else{
             createMemoryGame(fruitArrayEng, difficulty, fruitAudioArrayENG);
         }
     }else if(animalSelected && difficulty !== 0){
+        scorePanel.style.display = "flex";
         if(swedishSelected){
             createMemoryGame(animalArray, difficulty, animalAudioArray);
         } else {
             createMemoryGame(animalArrayEng, difficulty, animalAudioArrayENG);
         }
     }else if(numberSelected && difficulty !== 0){
+        scorePanel.style.display = "flex";
         if (swedishSelected) {
             createMemoryGame(numbersArray, difficulty, numberAudioArray);
         } else {
