@@ -1,13 +1,5 @@
 //FRUKTER
 const fruitArray = [{
-    'name': 'orange',
-    'img': 'img/fruktbilder/orange.png',
-    },
-    {
-        'name': 'orange',
-        'img': 'img/fruktbilder/apelsin-text.png',
-    },
-    {
         'name': 'ananas',
         'img': 'img/fruktbilder/pineapple.png',
     },
