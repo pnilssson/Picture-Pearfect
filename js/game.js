@@ -9,7 +9,7 @@ let moves = 0;
 let counter = document.querySelector(".moves");
 
 let audio = '';
-let selectedArray = new Array();
+let selectedArray = [];
 
 const createMemoryGame = (array, difficulty, soundArray) => {
     let newArray = array.slice((difficulty - 1));
@@ -63,9 +63,7 @@ const createMemoryGame = (array, difficulty, soundArray) => {
         audio.autoplay = true;
 
         grid.appendChild(audio);
-        console.log(audio);
-
-    };
+    }
 };
 
 let firstGuess = '';
@@ -97,7 +95,7 @@ grid.addEventListener('click', function (event) {
             clicked.parentNode.classList.add('selected');
         }
         // If both guesses are not empty...
-        if (firstGuess !== '' && secondGuess !== '') {
+        if (firstGuess && secondGuess) {
             if (firstGuess === secondGuess) {
                 runSound();
                 setTimeout(match, delay);
@@ -134,10 +132,11 @@ const match = () => {
     winChecker();
 };
 
-const resetGuesses = () => {
+let resetGuesses = () => {
     firstGuess = '';
     secondGuess = '';
     count = 0;
+    previousTarget = null;
 
     let selected = document.querySelectorAll('.selected');
     selected.forEach(card => {
