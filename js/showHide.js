@@ -143,7 +143,7 @@ runAgain.addEventListener('click', function () {
         if(swedishSelected){
             createMemoryGame(fruitArray, difficulty, fruitAudioArray);
         } else {
-            createMemoryGame(fruitArrayEng, difficulty, fruitAudioArray)
+            createMemoryGame(fruitArrayEng, difficulty, fruitAudioArrayENG)
         }
     }else if(animalSelected && difficulty !== 0){
         scorePanel.style.display = "flex";
@@ -153,7 +153,7 @@ runAgain.addEventListener('click', function () {
         if(swedishSelected){
             createMemoryGame(animalArray, difficulty, animalAudioArray);
         } else {
-            createMemoryGame(animalArrayEng, difficulty, animalAudioArray)
+            createMemoryGame(animalArrayEng, difficulty, animalAudioArrayENG)
         }
     }else if(numberSelected && difficulty !== 0) {
         scorePanel.style.display = "flex";
@@ -163,7 +163,7 @@ runAgain.addEventListener('click', function () {
         if(swedishSelected){
             createMemoryGame(numbersArray, difficulty, numberAudioArray);
         } else {
-            createMemoryGame(numbersArrayEng, difficulty, numberAudioArray)
+            createMemoryGame(numbersArrayEng, difficulty, numberAudioArrayENG)
         }
     }
 });
