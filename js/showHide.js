@@ -140,19 +140,31 @@ runAgain.addEventListener('click', function () {
         congratulationMsg.style.display = "none";
         congratulationMsg.innerHTML = "";
         winCond = 0;
-        createMemoryGame(fruitArray, difficulty, fruitAudioArray);
+        if(swedishSelected){
+            createMemoryGame(fruitArray, difficulty, fruitAudioArray);
+        } else {
+            createMemoryGame(fruitArrayEng, difficulty, fruitAudioArray)
+        }
     }else if(animalSelected && difficulty !== 0){
         scorePanel.style.display = "flex";
         congratulationMsg.style.display = "none";
         congratulationMsg.innerHTML = "";
         winCond = 0;
-        createMemoryGame(animalArray, difficulty, animalAudioArray);
+        if(swedishSelected){
+            createMemoryGame(animalArray, difficulty, animalAudioArray);
+        } else {
+            createMemoryGame(animalArrayEng, difficulty, animalAudioArray)
+        }
     }else if(numberSelected && difficulty !== 0) {
         scorePanel.style.display = "flex";
         congratulationMsg.style.display = "none";
         congratulationMsg.innerHTML = "";
         winCond = 0;
-        createMemoryGame(numbersArray, difficulty, numberAudioArray);
+        if(swedishSelected){
+            createMemoryGame(numbersArray, difficulty, numberAudioArray);
+        } else {
+            createMemoryGame(numbersArrayEng, difficulty, numberAudioArray)
+        }
     }
 });
 
