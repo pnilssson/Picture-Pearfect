@@ -353,6 +353,75 @@ a:visited {
   transform: rotateY(180deg);
 }
 
+#myModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  z-index: 1; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  width: 300px; /* Full width */
+  height: 400px; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #CED400), color-stop(1, #999700));
+  background:-moz-linear-gradient(top, #CED400 5%, #999700 100%);
+  background:-webkit-linear-gradient(top, #CED400 5%, #999700 100%);
+  background:-o-linear-gradient(top, #CED400 5%, #999700 100%);
+  background:-ms-linear-gradient(top, #CED400 5%, #999700 100%);
+  background:linear-gradient(to bottom, #CED400 5%, #999700 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#CED400', endColorstr='#999700',GradientType=0);
+  border: 1px solid green;
+  border-radius: 4px;
+  box-shadow: 0px 10px 14px -7px #000;
+}
+
+#modalContent {
+  position: relative;
+  background-color: rgba(0,0,0,0);
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animation;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animation {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animation {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+#closeModal {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+#closeModal:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .bigBtnEasy {
     margin: 0.5em 0.5em 1em 0.5em;

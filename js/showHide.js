@@ -1,5 +1,5 @@
 let menuSection, fruit, animal, number,  easy, medium, hard, swedish,
-    english, stats, startGame, gameSection, restart,runAgain, playMenu, scorePanel, soundOpt;
+    english, stats, startGame, gameSection, restart,runAgain, playMenu, scorePanel, modal, highScores, closeModal, soundOpt;
 
 menuSection = document.getElementById("menu-section");
 fruit = document.getElementById("fruit-btn");
@@ -17,6 +17,9 @@ gameSection = document.getElementById("game-section");
 playMenu = document.getElementById("menu-while-playing");
 runAgain = document.getElementById("runAgain");
 scorePanel = document.getElementById("score-panel");
+modal = document.getElementById("myModal");
+highScores = document.getElementById("highScores");
+closeModal = document.getElementById("closeModal");
 soundOpt = document.getElementById("soundOpt");
 
 let fruitSelected = Boolean(false);
@@ -94,6 +97,21 @@ english.addEventListener('click', function () {
     swedishSelected = false;
     swedish.style.border = '';
 });
+
+highScores.onclick = function () {
+    modal.style.display = 'block';
+};
+
+closeModal.onclick = function () {
+    modal.style.display = 'none';
+};
+
+document.window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+};
+
 
 soundOpt.addEventListener('click', function () {
     if(!noSound){

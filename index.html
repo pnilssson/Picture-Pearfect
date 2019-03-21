@@ -38,7 +38,7 @@
         <div class="bigBtnGreen scale" id="start-game">Spela</div>
     </div>
     <div class="memory-game-other grid-center">
-        <div class="btnOther"><img src="img/trophy.png" class="stats-icon scale"></div>
+        <div class="btnOther"><img src="img/trophy.png" class="stats-icon scale" id="highScores"></div>
         <div class="btnOther"><img src="img/speakerON.png" class="sound-icon scale" id="soundOpt"></div>
     </div>
 </section>
@@ -56,6 +56,32 @@
 <article class="congratulation-msg" id="congratulation-msg"></article>
 
 <section class="game-section" id="game-section"></section>
+
+<div id="myModal" class="modal">
+    <div id="modalContent">
+        <span id="closeModal">&times;</span>
+        <h1> Topplista </h1>
+        <table>
+            <tr>
+                <th> Svenska </th>
+                <th> Engelska</th>
+            </tr>
+            <tr id="best">
+                <td> 1st SVE</td>
+                <td> 1st ENG</td>
+            </tr>
+            <tr id="second">
+                <td> 2nd SVE</td>
+                <td> 2nd ENG</td>
+            </tr>
+            <tr id="third">
+                <td> 3rd SVE</td>
+                <td> 3rd ENG</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
 
 <script src="js/cardArrays.js"></script>
 <script src="js/showHide.js"></script>
