@@ -97,7 +97,9 @@ grid.addEventListener('click', function (event) {
         // If both guesses are not empty...
         if (firstGuess && secondGuess) {
             if (firstGuess === secondGuess) {
-                runSound();
+                if(noSound!=true){
+                    runSound();
+                }
                 setTimeout(match, delay);
                 setTimeout(doNotResetMatch, delay);
             } else {

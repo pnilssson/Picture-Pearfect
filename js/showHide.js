@@ -103,7 +103,6 @@ soundOpt.addEventListener('click', function () {
         noSound = false;
         soundOpt.src = "img/speakerON.png";
     }
-    console.log(noSound);
 });
 
 startGame.addEventListener('click', function () {
