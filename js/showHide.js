@@ -1,5 +1,5 @@
 let menuSection, fruit, animal, number,  easy, medium, hard, swedish,
-    english, stats, startGame, gameSection, restart,runAgain, playMenu, scorePanel;
+    english, stats, startGame, gameSection, restart,runAgain, playMenu, scorePanel, soundOpt;
 
 menuSection = document.getElementById("menu-section");
 fruit = document.getElementById("fruit-btn");
@@ -17,6 +17,7 @@ gameSection = document.getElementById("game-section");
 playMenu = document.getElementById("menu-while-playing");
 runAgain = document.getElementById("runAgain");
 scorePanel = document.getElementById("score-panel");
+soundOpt = document.getElementById("soundOpt");
 
 let fruitSelected = Boolean(false);
 let animalSelected = Boolean(false);
@@ -26,6 +27,8 @@ let difficulty = 0;
 
 let englishSelected = Boolean(false);
 let swedishSelected = Boolean(false);
+
+let noSound = Boolean(false);
 
 fruit.addEventListener('click', function(){
     fruitSelected = !fruitSelected;
@@ -92,6 +95,17 @@ english.addEventListener('click', function () {
     swedish.style.border = '';
 });
 
+soundOpt.addEventListener('click', function () {
+    if(!noSound){
+        noSound = true;
+        soundOpt.src = "img/speakerOFF.png";
+    } else {
+        noSound = false;
+        soundOpt.src = "img/speakerON.png";
+    }
+    console.log(noSound);
+});
+
 startGame.addEventListener('click', function () {
     menuSection.style.display = "none";
     playMenu.style.display = "flex";
@@ -132,7 +146,6 @@ restart.addEventListener('click', function () {
     scorePanel.style.display = "none";
 });
 
-//note: this section needs to be updated -> not ideal(always runs Swedish)
 runAgain.addEventListener('click', function () {
     removeGrid();
     if(fruitSelected && difficulty !== 0){
