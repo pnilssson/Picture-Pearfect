@@ -44,6 +44,30 @@ localStorage.setItem('highScoreHardEng1', highScoreHardEng1);
 localStorage.setItem('highScoreHardEng2', highScoreHardEng2);
 localStorage.setItem('highScoreHardEng3', highScoreHardEng3);
 
+document.getElementById('sweBest').innerHTML=highScoreEasy1;
+document.getElementById('swe2ndBest').innerHTML=highScoreEasy2;
+document.getElementById('swe3rdBest').innerHTML=highScoreEasy3;
+
+document.getElementById('sweMedBest').innerHTML=highScoreMed1;
+document.getElementById('sweMed2ndBest').innerHTML=highScoreMed2;
+document.getElementById('sweMed3rdBest').innerHTML=highScoreMed3;
+
+document.getElementById('sweHardBest').innerHTML=highScoreHard1;
+document.getElementById('sweHard2ndBest').innerHTML=highScoreHard2;
+document.getElementById('sweHard3rdBest').innerHTML=highScoreHard3;
+
+
+document.getElementById('engBest').innerHTML=highScoreEasyEng1;
+document.getElementById('eng2ndBest').innerHTML=highScoreEasyEng2;
+document.getElementById('eng3rdBest').innerHTML=highScoreEasyEng3;
+
+document.getElementById('engMedBest').innerHTML=highScoreMedEng1;
+document.getElementById('engMed2ndBest').innerHTML=highScoreMedEng2;
+document.getElementById('engMed3rdBest').innerHTML=highScoreMedEng3;
+
+document.getElementById('engHardBest').innerHTML=highScoreHard1;
+document.getElementById('engHard2ndBest').innerHTML=highScoreHard2;
+document.getElementById('engHard3rdBest').innerHTML=highScoreHard3;
 
 const grid = document.createElement("div");
 grid.setAttribute('class', 'grid');

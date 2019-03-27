@@ -60,23 +60,80 @@
 <div id="myModal" class="modal">
     <div id="modalContent">
         <span id="closeModal">&times;</span>
-        <h1> Topplista </h1>
-        <table>
+        <h2>Topplista</h2>
+        <table class="table">
+            <tr class="table-header">
+                <td><h3>Lätt</h3></td>
+            </tr>
             <tr>
-                <th> Svenska </th>
-                <th> Engelska</th>
+                <th class="table-language" colspan="3">Svenska</th>
+                <th class="table-language" colspan="3">Engelska</th>
             </tr>
-            <tr id="best">
-                <td> 1st SVE</td>
-                <td> 1st ENG</td>
+            <tr>
+                <td><img class="medal-icon" src="img/gold.png"></td>
+                <td><img class="medal-icon" src="img/silver.png"></td>
+                <td><img class="medal-icon" src="img/bronze.png"></td>
+                <td><img class="medal-icon" src="img/gold.png"></td>
+                <td><img class="medal-icon" src="img/silver.png"></td>
+                <td><img class="medal-icon" src="img/bronze.png"></td>
             </tr>
-            <tr id="second">
-                <td> 2nd SVE</td>
-                <td> 2nd ENG</td>
+            <tr>
+                <td id="sweBest"></td>
+                <td id="swe2ndBest"></td>
+                <td id="swe3rdBest"></td>
+                <td id="engBest"></td>
+                <td id="eng2ndBest"></td>
+                <td id="eng3rdBest"></td>
             </tr>
-            <tr id="third">
-                <td> 3rd SVE</td>
-                <td> 3rd ENG</td>
+        </table>
+        <table class="table">
+            <tr class="table-header">
+                <td><h3>Medel</h3></td>
+            </tr>
+            <tr>
+                <th class="table-language" colspan="3">Svenska</th>
+                <th class="table-language" colspan="3">Engelska</th>
+            </tr>
+            <tr>
+                <td><img class="medal-icon" src="img/gold.png"></td>
+                <td><img class="medal-icon" src="img/silver.png"></td>
+                <td><img class="medal-icon" src="img/bronze.png"></td>
+                <td><img class="medal-icon" src="img/gold.png"></td>
+                <td><img class="medal-icon" src="img/silver.png"></td>
+                <td><img class="medal-icon" src="img/bronze.png"></td>
+            </tr>
+            <tr>
+                <td id="sweMedBest"></td>
+                <td id="sweMed2ndBest"></td>
+                <td id="sweMed3rdBest"></td>
+                <td id="engMedBest"></td>
+                <td id="engMed2ndBest"></td>
+                <td id="engMed3rdBest"></td>
+            </tr>
+        </table>
+        <table class="table">
+            <tr class="table-header">
+                <td><h3>Svår</h3></td>
+            </tr>
+            <tr>
+                <th class="table-language" colspan="3">Svenska</th>
+                <th class="table-language" colspan="3">Engelska</th>
+            </tr>
+            <tr>
+                <td><img class="medal-icon" src="img/gold.png"></td>
+                <td><img class="medal-icon" src="img/silver.png"></td>
+                <td><img class="medal-icon" src="img/bronze.png"></td>
+                <td><img class="medal-icon" src="img/gold.png"></td>
+                <td><img class="medal-icon" src="img/silver.png"></td>
+                <td><img class="medal-icon" src="img/bronze.png"></td>
+            </tr>
+            <tr >
+                <td id="sweHardBest"></td>
+                <td id="sweHard2ndBest"></td>
+                <td id="sweHard3rdBest"></td>
+                <td id="engHardBest"></td>
+                <td id="engHard2ndBest"></td>
+                <td id="engHard3rdBest"></td>
             </tr>
         </table>
     </div>

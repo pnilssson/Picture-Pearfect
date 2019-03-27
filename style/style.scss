@@ -389,6 +389,31 @@ a:visited {
   animation-duration: 0.4s;
 }
 
+.table {
+  width: 100%;
+}
+
+td {
+  max-width: 35px;
+  width: 16.666%;
+}
+
+.table-header{
+  margin-bottom: 0.5em;
+  h3{
+    margin: 0.5em 0 0 0;
+  }
+}
+
+.table-language {
+  width: 50%;
+}
+
+.medal-icon {
+  width: 20px;
+  height: auto
+}
+
 /* Add Animation */
 @-webkit-keyframes animation {
   from {
