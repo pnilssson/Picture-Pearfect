@@ -106,13 +106,6 @@ closeModal.onclick = function () {
     modal.style.display = 'none';
 };
 
-document.window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-};
-
-
 soundOpt.addEventListener('click', function () {
     if(!noSound){
         noSound = true;
