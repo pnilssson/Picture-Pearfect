@@ -1,74 +1,3 @@
-var highScoreEasy1 = 15;
-var highScoreEasy2 = 20;
-var highScoreEasy3 = 25;
-
-var highScoreMed1 = 20;
-var highScoreMed2 = 25;
-var highScoreMed3 = 30;
-
-var highScoreHard1 = 25;
-var highScoreHard2 = 30;
-var highScoreHard3 = 35;
-localStorage.setItem('highScoreEasy1', highScoreEasy1);
-localStorage.setItem('highScoreEasy2', highScoreEasy2);
-localStorage.setItem('highScoreEasy3', highScoreEasy3);
-
-localStorage.setItem('highScoreMed1', highScoreMed1);
-localStorage.setItem('highScoreMed2', highScoreMed2);
-localStorage.setItem('highScoreMed3', highScoreMed3);
-
-localStorage.setItem('highScoreHard1', highScoreHard1);
-localStorage.setItem('highScoreHard2', highScoreHard2);
-localStorage.setItem('highScoreHard3', highScoreHard3);
-
-var highScoreEasyEng1 = 15;
-var highScoreEasyEng2 = 20;
-var highScoreEasyEng3 = 25;
-
-var highScoreMedEng1 = 20;
-var highScoreMedEng2 = 25;
-var highScoreMedEng3 = 30;
-
-var highScoreHardEng1 = 25;
-var highScoreHardEng2 = 30;
-var highScoreHardEng3 = 35;
-localStorage.setItem('highScoreEasyEng1', highScoreEasyEng1);
-localStorage.setItem('highScoreEasyEng2', highScoreEasyEng2);
-localStorage.setItem('highScoreEasyEng3', highScoreEasyEng3);
-
-localStorage.setItem('highScoreMedEng1', highScoreMedEng1);
-localStorage.setItem('highScoreMedEng2', highScoreMedEng2);
-localStorage.setItem('highScoreMedEng3', highScoreMedEng3);
-
-localStorage.setItem('highScoreHardEng1', highScoreHardEng1);
-localStorage.setItem('highScoreHardEng2', highScoreHardEng2);
-localStorage.setItem('highScoreHardEng3', highScoreHardEng3);
-
-document.getElementById('sweBest').innerHTML=highScoreEasy1;
-document.getElementById('swe2ndBest').innerHTML=highScoreEasy2;
-document.getElementById('swe3rdBest').innerHTML=highScoreEasy3;
-
-document.getElementById('sweMedBest').innerHTML=highScoreMed1;
-document.getElementById('sweMed2ndBest').innerHTML=highScoreMed2;
-document.getElementById('sweMed3rdBest').innerHTML=highScoreMed3;
-
-document.getElementById('sweHardBest').innerHTML=highScoreHard1;
-document.getElementById('sweHard2ndBest').innerHTML=highScoreHard2;
-document.getElementById('sweHard3rdBest').innerHTML=highScoreHard3;
-
-
-document.getElementById('engBest').innerHTML=highScoreEasyEng1;
-document.getElementById('eng2ndBest').innerHTML=highScoreEasyEng2;
-document.getElementById('eng3rdBest').innerHTML=highScoreEasyEng3;
-
-document.getElementById('engMedBest').innerHTML=highScoreMedEng1;
-document.getElementById('engMed2ndBest').innerHTML=highScoreMedEng2;
-document.getElementById('engMed3rdBest').innerHTML=highScoreMedEng3;
-
-document.getElementById('engHardBest').innerHTML=highScoreHard1;
-document.getElementById('engHard2ndBest').innerHTML=highScoreHard2;
-document.getElementById('engHard3rdBest').innerHTML=highScoreHard3;
-
 const grid = document.createElement("div");
 grid.setAttribute('class', 'grid');
 
@@ -87,7 +16,6 @@ const createMemoryGame = (array, difficulty, soundArray) => {
     newArray.sort(() => 0.5 - Math.random());
 
     selectedArray = soundArray;
-
     for(let i = 0; i < newArray.length; i++){
         let item = newArray[i];
         // Create card element with the name dataset
@@ -118,7 +46,7 @@ const createMemoryGame = (array, difficulty, soundArray) => {
         second = 0;
         minute = 0;
         hour = 0;
-        var timer = document.querySelector(".timer");
+        let timer = document.querySelector(".timer");
         timer.innerHTML = "0 mins 0 secs";
         clearInterval(interval);
     }
@@ -158,17 +86,15 @@ grid.addEventListener('click', function (event) {
         moveCounter();
         if (count === 1) {
             firstGuess = clicked.parentNode.dataset.name;
-            console.log(firstGuess);
             clicked.parentNode.classList.add('selected');
         } else {
             secondGuess = clicked.parentNode.dataset.name;
-            console.log(secondGuess);
             clicked.parentNode.classList.add('selected');
         }
         // If both guesses are not empty...
         if (firstGuess && secondGuess) {
             if (firstGuess === secondGuess) {
-                if(noSound!=true){
+                if(noSound !== true){
                     runSound();
                 }
                 setTimeout(match, delay);
@@ -184,13 +110,10 @@ grid.addEventListener('click', function (event) {
 
 function runSound(){
     audio.dataset.name = secondGuess;
-    console.log(audio.dataset.name);
 
     for (let k = 0; k<selectedArray.length; k++){
         if(selectedArray[k].name===audio.dataset.name){
-            console.log(selectedArray[k].name===audio.dataset.name);
-            console.log(selectedArray[k].audio);
-            var sound = document.getElementById('audioElement');
+            let sound = document.getElementById('audioElement');
             sound.src = selectedArray[k].audio;
             sound.play();
         }
@@ -228,7 +151,7 @@ function moveCounter() {
     moves++;
     counter.innerHTML = moves;
     //start timer on first click
-    if (moves == 1) {
+    if (moves === 1) {
         second = 0;
         minute = 0;
         hour = 0;
@@ -237,18 +160,18 @@ function moveCounter() {
 }
 
 // @description game timer
-var second = 0, minute = 0; hour = 0;
-var timer = document.querySelector(".timer");
-var interval;
+let second = 0, minute = 0, hour = 0;
+let timer = document.querySelector(".timer");
+let interval;
 function startTimer(){
     interval = setInterval(function(){
         timer.innerHTML = minute+"mins "+second+"secs";
         second++;
-        if(second == 60){
+        if(second === 60){
             minute++;
             second=0;
         }
-        if(minute == 60){
+        if(minute === 60){
             hour++;
             minute = 0;
         }
@@ -257,288 +180,153 @@ function startTimer(){
 
 const congratulationMsg = document.getElementById("congratulation-msg");
 const winChecker = () => {
-    if(swedishSelected) {
-        if (difficulty == 9) {
+    if (swedishSelected) {
+        if (difficulty === 9) {
             winCond += 2;
-            if (winCond == 12) {
+            if (winCond === 12) {
                 scorePanel.style.display = "none";
                 congratulationMsg.style.display = "flex";
                 congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                var newScore = moves;
-                var retrieved1 = parseInt(localStorage.getItem('highScoreEasy1'), 10);
-                var retrieved2 = parseInt(localStorage.getItem('highScoreEasy2'), 10);
-                var retrieved3 = parseInt(localStorage.getItem('highScoreEasy3'), 10);
-                console.log(retrieved1, retrieved2, retrieved3);
-                if (newScore <= retrieved1) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = retrieved1;
-                    retrieved1 = newScore;
-                    localStorage.setItem('highScoreEasy1', retrieved1);
-                    localStorage.setItem('highScoreEasy2', retrieved2);
-                    localStorage.setItem('highScoreEasy3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreEasy1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreEasy2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreEasy3'), 10);
-                    console.log(test1, test2, test3);
+                if (localStorage.getItem('highScoreEasy1') === '0') {
+                    localStorage.setItem('highScoreEasy1', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreEasy1'))) {
+                    localStorage.setItem('highScoreEasy3', localStorage.getItem('highScoreEasy2'));
+                    localStorage.setItem('highScoreEasy2', localStorage.getItem('highScoreEasy1'));
+                    localStorage.setItem('highScoreEasy1', moves);
+                } else if (localStorage.getItem('highScoreEasy2') === '0') {
+                    localStorage.setItem('highScoreEasy2', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreEasy2'))) {
+                    localStorage.setItem('highScoreEasy3', localStorage.getItem('highScoreEasy2'));
+                    localStorage.setItem('highScoreEasy2', moves);
+                } else if (localStorage.getItem('highScoreEasy3') === '0') {
+                    localStorage.setItem('highScoreEasy3', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreEasy3'))) {
+                    localStorage.setItem('highScoreEasy3', moves);
                 }
-                else if (newScore <= retrieved2) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = newScore;
-                    localStorage.setItem('highScoreEasy1', retrieved1);
-                    localStorage.setItem('highScoreEasy2', retrieved2);
-                    localStorage.setItem('highScoreEasy3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreEasy1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreEasy2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreEasy3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved3) {
-                    retrieved3 = newScore;
-                    localStorage.setItem('highScoreEasy1', retrieved1);
-                    localStorage.setItem('highScoreEasy2', retrieved2);
-                    localStorage.setItem('highScoreEasy3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreEasy1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreEasy2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreEasy3'), 10);
-                    console.log(test1, test2, test3);
-                }
-
             }
         }
-        if (difficulty == 5) {
+        if (difficulty === 5) {
             winCond += 2;
-            if (winCond == 16) {
+            if (winCond === 16) {
                 scorePanel.style.display = "none";
                 congratulationMsg.style.display = "flex";
                 congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                var newScore = moves;
-                var retrieved1 = parseInt(localStorage.getItem('highScoreMed1'), 10);
-                var retrieved2 = parseInt(localStorage.getItem('highScoreMed2'), 10);
-                var retrieved3 = parseInt(localStorage.getItem('highScoreMed3'), 10);
-                console.log(retrieved1, retrieved2, retrieved3);
-                if (newScore <= retrieved1) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = retrieved1;
-                    retrieved1 = newScore;
-                    localStorage.setItem('highScoreMed1', retrieved1);
-                    localStorage.setItem('highScoreMed2', retrieved2);
-                    localStorage.setItem('highScoreMed3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreMed1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreMed2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreMed3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved2) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = newScore;
-                    localStorage.setItem('highScoreMed1', retrieved1);
-                    localStorage.setItem('highScoreMed2', retrieved2);
-                    localStorage.setItem('highScoreMed3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreMed1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreMed2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreMed3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved3) {
-                    retrieved3 = newScore;
-                    localStorage.setItem('highScoreMed1', retrieved1);
-                    localStorage.setItem('highScoreMed2', retrieved2);
-                    localStorage.setItem('highScoreMed3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreMed1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreMed2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreMed3'), 10);
-                    console.log(test1, test2, test3);
+                if (localStorage.getItem('highScoreMed1') === '0') {
+                    localStorage.setItem('highScoreMed1', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreMed1'))) {
+                    localStorage.setItem('highScoreMed3', localStorage.getItem('highScoreMed2'));
+                    localStorage.setItem('highScoreMed2', localStorage.getItem('highScoreMed1'));
+                    localStorage.setItem('highScoreMed1', moves);
+                } else if (localStorage.getItem('highScoreMed2') === '0') {
+                    localStorage.setItem('highScoreMed2', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreMed2'))) {
+                    localStorage.setItem('highScoreMed3', localStorage.getItem('highScoreMed2'));
+                    localStorage.setItem('highScoreMed2', moves);
+                } else if (localStorage.getItem('highScoreMed3') === '0') {
+                    localStorage.setItem('highScoreMed3', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreMed3'))) {
+                    localStorage.setItem('highScoreMed3', moves);
                 }
             }
         }
-        if (difficulty == 1) {
+        if (difficulty === 1) {
             winCond += 2;
-            if (winCond == 20) {
+            if (winCond === 20) {
                 scorePanel.style.display = "none";
                 congratulationMsg.style.display = "flex";
                 congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                var newScore = moves;
-                var retrieved1 = parseInt(localStorage.getItem('highScoreHard1'), 10);
-                var retrieved2 = parseInt(localStorage.getItem('highScoreHard2'), 10);
-                var retrieved3 = parseInt(localStorage.getItem('highScoreHard3'), 10);
-                console.log(retrieved1, retrieved2, retrieved3);
-                if (newScore <= retrieved1) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = retrieved1;
-                    retrieved1 = newScore;
-                    localStorage.setItem('highScoreHard1', retrieved1);
-                    localStorage.setItem('highScoreHard2', retrieved2);
-                    localStorage.setItem('highScoreHard3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreHard1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreHard2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreHard3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved2) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = newScore;
-                    localStorage.setItem('highScoreHard1', retrieved1);
-                    localStorage.setItem('highScoreHard2', retrieved2);
-                    localStorage.setItem('highScoreHard3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreHard1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreHard2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreHard3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved3) {
-                    retrieved3 = newScore;
-                    localStorage.setItem('highScoreHard1', retrieved1);
-                    localStorage.setItem('highScoreHard2', retrieved2);
-                    localStorage.setItem('highScoreHard3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreHard1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreHard2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreHard3'), 10);
-                    console.log(test1, test2, test3);
+                if (localStorage.getItem('highScoreHard1') === '0') {
+                    localStorage.setItem('highScoreHard1', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreHard1'))) {
+                    localStorage.setItem('highScoreHard3', localStorage.getItem('highScoreHard2'));
+                    localStorage.setItem('highScoreHard2', localStorage.getItem('highScoreHard1'));
+                    localStorage.setItem('highScoreHard1', moves);
+                } else if (localStorage.getItem('highScoreHard2') === '0') {
+                    localStorage.setItem('highScoreHard2', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreHard2'))) {
+                    localStorage.setItem('highScoreHard3', localStorage.getItem('highScoreHard2'));
+                    localStorage.setItem('highScoreHard2', moves);
+                } else if (localStorage.getItem('highScoreHard3') === '0') {
+                    localStorage.setItem('highScoreHard3', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreHard3'))) {
+                    localStorage.setItem('highScoreHard3', moves);
                 }
             }
         }
-    }else if(!swedishSelected){
-        if (difficulty == 9) {
-            winCond += 2;
-            if (winCond == 12) {
-                scorePanel.style.display = "none";
-                congratulationMsg.style.display = "flex";
-                congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                var newScore = moves;
-                var retrieved1 = parseInt(localStorage.getItem('highScoreEasyEng1'), 10);
-                var retrieved2 = parseInt(localStorage.getItem('highScoreEasyEng2'), 10);
-                var retrieved3 = parseInt(localStorage.getItem('highScoreEasyEng3'), 10);
-                console.log(retrieved1, retrieved2, retrieved3);
-                if (newScore <= retrieved1) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = retrieved1;
-                    retrieved1 = newScore;
-                    localStorage.setItem('highScoreEasyEng1', retrieved1);
-                    localStorage.setItem('highScoreEasyEng2', retrieved2);
-                    localStorage.setItem('highScoreEasyEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreEasyEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreEasyEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreEasyEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved2) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = newScore;
-                    localStorage.setItem('highScoreEasyEng1', retrieved1);
-                    localStorage.setItem('highScoreEasyEng2', retrieved2);
-                    localStorage.setItem('highScoreEasyEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreEasyEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreEasyEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreEasyEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved3) {
-                    retrieved3 = newScore;
-                    localStorage.setItem('highScoreEasyEng1', retrieved1);
-                    localStorage.setItem('highScoreEasyEng2', retrieved2);
-                    localStorage.setItem('highScoreEasyEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreEasyEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreEasyEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreEasyEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-
-
-            }
-        }
-        if (difficulty == 5) {
-            winCond += 2;
-            if (winCond == 16) {
-                scorePanel.style.display = "none";
-                congratulationMsg.style.display = "flex";
-                congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                var newScore = moves;
-                var retrieved1 = parseInt(localStorage.getItem('highScoreMedEng1'), 10);
-                var retrieved2 = parseInt(localStorage.getItem('highScoreMedEng2'), 10);
-                var retrieved3 = parseInt(localStorage.getItem('highScoreMedEng3'), 10);
-                console.log(retrieved1, retrieved2, retrieved3);
-                if (newScore <= retrieved1) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = retrieved1;
-                    retrieved1 = newScore;
-                    localStorage.setItem('highScoreMedEng1', retrieved1);
-                    localStorage.setItem('highScoreMedEng2', retrieved2);
-                    localStorage.setItem('highScoreMedEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreMedEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreMedEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreMedEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved2) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = newScore;
-                    localStorage.setItem('highScoreMedEng1', retrieved1);
-                    localStorage.setItem('highScoreMedEng2', retrieved2);
-                    localStorage.setItem('highScoreMedEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreMedEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreMedEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreMedEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved3) {
-                    retrieved3 = newScore;
-                    localStorage.setItem('highScoreMedEng1', retrieved1);
-                    localStorage.setItem('highScoreMedEng2', retrieved2);
-                    localStorage.setItem('highScoreMedEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreMedEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreMedEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreMedEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-            }
-        }
-        if (difficulty == 1) {
-            winCond += 2;
-            if (winCond == 20) {
-                scorePanel.style.display = "none";
-                congratulationMsg.style.display = "flex";
-                congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                var newScore = moves;
-                var retrieved1 = parseInt(localStorage.getItem('highScoreHardEng1'), 10);
-                var retrieved2 = parseInt(localStorage.getItem('highScoreHardEng2'), 10);
-                var retrieved3 = parseInt(localStorage.getItem('highScoreHardEng3'), 10);
-                console.log(retrieved1, retrieved2, retrieved3);
-                if (newScore <= retrieved1) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = retrieved1;
-                    retrieved1 = newScore;
-                    localStorage.setItem('highScoreHardEng1', retrieved1);
-                    localStorage.setItem('highScoreHardEng2', retrieved2);
-                    localStorage.setItem('highScoreHardEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreHardEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreHardEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreHardEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved2) {
-                    retrieved3 = retrieved2;
-                    retrieved2 = newScore;
-                    localStorage.setItem('highScoreHardEng1', retrieved1);
-                    localStorage.setItem('highScoreHardEng2', retrieved2);
-                    localStorage.setItem('highScoreHardEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreHardEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreHardEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreHardEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-                else if (newScore <= retrieved3) {
-                    retrieved3 = newScore;
-                    localStorage.setItem('highScoreHardEng1', retrieved1);
-                    localStorage.setItem('highScoreHardEng2', retrieved2);
-                    localStorage.setItem('highScoreHardEng3', retrieved3);
-                    var test1 = parseInt(localStorage.getItem('highScoreHardEng1'), 10);
-                    var test2 = parseInt(localStorage.getItem('highScoreHardEng2'), 10);
-                    var test3 = parseInt(localStorage.getItem('highScoreHardEng3'), 10);
-                    console.log(test1, test2, test3);
-                }
-            }
-        }
-
     }
-};
+        if (!swedishSelected) {
+            if (difficulty === 9) {
+                winCond += 2;
+                if (winCond === 12) {
+                    scorePanel.style.display = "none";
+                    congratulationMsg.style.display = "flex";
+                    congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
+                    if (localStorage.getItem('highScoreEasyEng1') === '0') {
+                        localStorage.setItem('highScoreEasyEng1', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng1'))) {
+                        localStorage.setItem('highScoreEasyEng3', localStorage.getItem('highScoreEasyEng2'));
+                        localStorage.setItem('highScoreEasyEng2', localStorage.getItem('highScoreEasyEng1'));
+                        localStorage.setItem('highScoreMed1', moves);
+                    } else if (localStorage.getItem('highScoreEasyEng2') === '0') {
+                        localStorage.setItem('highScoreEasyEng2', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng2'))) {
+                        localStorage.setItem('highScoreEasyEng3', localStorage.getItem('highScoreEasyEng2'));
+                        localStorage.setItem('highScoreEasyEng2', moves);
+                    } else if (localStorage.getItem('highScoreEasyEng3') === '0') {
+                        localStorage.setItem('highScoreEasyEng3', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng3'))) {
+                        localStorage.setItem('highScoreEasyEng3', moves);
+                    }
+                }
+            }
+            if (difficulty === 5) {
+                winCond += 2;
+                if (winCond === 16) {
+                    scorePanel.style.display = "none";
+                    congratulationMsg.style.display = "flex";
+                    congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
+                    if (localStorage.getItem('highScoreMedEng1') === '0') {
+                        localStorage.setItem('highScoreMedEng1', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng1'))) {
+                        localStorage.setItem('highScoreMedEng3', localStorage.getItem('highScoreMedEng2'));
+                        localStorage.setItem('highScoreMedEng2', localStorage.getItem('highScoreMedEng1'));
+                        localStorage.setItem('highScoreMed1', moves);
+                    } else if (localStorage.getItem('highScoreMedEng2') === '0') {
+                        localStorage.setItem('highScoreMedEng2', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng2'))) {
+                        localStorage.setItem('highScoreMedEng3', localStorage.getItem('highScoreMedEng2'));
+                        localStorage.setItem('highScoreMed2', moves);
+                    } else if (localStorage.getItem('highScoreMedEng3') === '0') {
+                        localStorage.setItem('highScoreMedEng3', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng3'))) {
+                        localStorage.setItem('highScoreMed3', moves);
+                    }
+                }
+            }
+            if (difficulty === 1) {
+                winCond += 2;
+                if (winCond === 20) {
+                    scorePanel.style.display = "none";
+                    congratulationMsg.style.display = "flex";
+                    congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
+                    if (localStorage.getItem('highScoreHardEng1') === '0') {
+                        localStorage.setItem('highScoreHardEng1', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng1'))) {
+                        localStorage.setItem('highScoreHardEng3', localStorage.getItem('highScoreHardEng2'));
+                        localStorage.setItem('highScoreHardEng2', localStorage.getItem('highScoreHardEng1'));
+                        localStorage.setItem('highScoreHardEng1', moves);
+                    } else if (localStorage.getItem('highScoreHardEng2') === '0') {
+                        localStorage.setItem('highScoreHardEng2', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng2'))) {
+                        localStorage.setItem('highScoreHardEng3', localStorage.getItem('highScoreHard2'));
+                        localStorage.setItem('highScoreHardEng2', moves);
+                    } else if (localStorage.getItem('highScoreHardEng3') === '0') {
+                        localStorage.setItem('highScoreHardEng3', moves);
+                    } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng3'))) {
+                        localStorage.setItem('highScoreHardEng3', moves);
+                    }
+                }
+            }
+        }
+    };
 

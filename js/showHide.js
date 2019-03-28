@@ -98,13 +98,13 @@ english.addEventListener('click', function () {
     swedish.style.border = '';
 });
 
-highScores.onclick = function () {
+highScores.addEventListener('click', function () {
     modal.style.display = 'block';
-};
+});
 
-closeModal.onclick = function () {
+closeModal.addEventListener('click', function(){
     modal.style.display = 'none';
-};
+});
 
 soundOpt.addEventListener('click', function () {
     if(!noSound){
