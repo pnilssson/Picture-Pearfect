@@ -254,79 +254,79 @@ const winChecker = () => {
             }
         }
     }
-        if (!swedishSelected) {
-            if (difficulty === 9) {
-                winCond += 2;
-                if (winCond === 12) {
-                    scorePanel.style.display = "none";
-                    congratulationMsg.style.display = "flex";
-                    congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                    if (localStorage.getItem('highScoreEasyEng1') === '0') {
-                        localStorage.setItem('highScoreEasyEng1', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng1'))) {
-                        localStorage.setItem('highScoreEasyEng3', localStorage.getItem('highScoreEasyEng2'));
-                        localStorage.setItem('highScoreEasyEng2', localStorage.getItem('highScoreEasyEng1'));
-                        localStorage.setItem('highScoreMed1', moves);
-                    } else if (localStorage.getItem('highScoreEasyEng2') === '0') {
-                        localStorage.setItem('highScoreEasyEng2', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng2'))) {
-                        localStorage.setItem('highScoreEasyEng3', localStorage.getItem('highScoreEasyEng2'));
-                        localStorage.setItem('highScoreEasyEng2', moves);
-                    } else if (localStorage.getItem('highScoreEasyEng3') === '0') {
-                        localStorage.setItem('highScoreEasyEng3', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng3'))) {
-                        localStorage.setItem('highScoreEasyEng3', moves);
-                    }
-                }
-            }
-            if (difficulty === 5) {
-                winCond += 2;
-                if (winCond === 16) {
-                    scorePanel.style.display = "none";
-                    congratulationMsg.style.display = "flex";
-                    congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                    if (localStorage.getItem('highScoreMedEng1') === '0') {
-                        localStorage.setItem('highScoreMedEng1', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng1'))) {
-                        localStorage.setItem('highScoreMedEng3', localStorage.getItem('highScoreMedEng2'));
-                        localStorage.setItem('highScoreMedEng2', localStorage.getItem('highScoreMedEng1'));
-                        localStorage.setItem('highScoreMed1', moves);
-                    } else if (localStorage.getItem('highScoreMedEng2') === '0') {
-                        localStorage.setItem('highScoreMedEng2', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng2'))) {
-                        localStorage.setItem('highScoreMedEng3', localStorage.getItem('highScoreMedEng2'));
-                        localStorage.setItem('highScoreMed2', moves);
-                    } else if (localStorage.getItem('highScoreMedEng3') === '0') {
-                        localStorage.setItem('highScoreMedEng3', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng3'))) {
-                        localStorage.setItem('highScoreMed3', moves);
-                    }
-                }
-            }
-            if (difficulty === 1) {
-                winCond += 2;
-                if (winCond === 20) {
-                    scorePanel.style.display = "none";
-                    congratulationMsg.style.display = "flex";
-                    congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
-                    if (localStorage.getItem('highScoreHardEng1') === '0') {
-                        localStorage.setItem('highScoreHardEng1', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng1'))) {
-                        localStorage.setItem('highScoreHardEng3', localStorage.getItem('highScoreHardEng2'));
-                        localStorage.setItem('highScoreHardEng2', localStorage.getItem('highScoreHardEng1'));
-                        localStorage.setItem('highScoreHardEng1', moves);
-                    } else if (localStorage.getItem('highScoreHardEng2') === '0') {
-                        localStorage.setItem('highScoreHardEng2', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng2'))) {
-                        localStorage.setItem('highScoreHardEng3', localStorage.getItem('highScoreHard2'));
-                        localStorage.setItem('highScoreHardEng2', moves);
-                    } else if (localStorage.getItem('highScoreHardEng3') === '0') {
-                        localStorage.setItem('highScoreHardEng3', moves);
-                    } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng3'))) {
-                        localStorage.setItem('highScoreHardEng3', moves);
-                    }
+    if (!swedishSelected) {
+        if (difficulty === 9) {
+            winCond += 2;
+            if (winCond === 12) {
+                scorePanel.style.display = "none";
+                congratulationMsg.style.display = "flex";
+                congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
+                if (localStorage.getItem('highScoreEasyEng1') === '0') {
+                    localStorage.setItem('highScoreEasyEng1', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng1'))) {
+                    localStorage.setItem('highScoreEasyEng3', localStorage.getItem('highScoreEasyEng2'));
+                    localStorage.setItem('highScoreEasyEng2', localStorage.getItem('highScoreEasyEng1'));
+                    localStorage.setItem('highScoreMed1', moves);
+                } else if (localStorage.getItem('highScoreEasyEng2') === '0') {
+                    localStorage.setItem('highScoreEasyEng2', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng2'))) {
+                    localStorage.setItem('highScoreEasyEng3', localStorage.getItem('highScoreEasyEng2'));
+                    localStorage.setItem('highScoreEasyEng2', moves);
+                } else if (localStorage.getItem('highScoreEasyEng3') === '0') {
+                    localStorage.setItem('highScoreEasyEng3', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreEasyEng3'))) {
+                    localStorage.setItem('highScoreEasyEng3', moves);
                 }
             }
         }
-    };
+        if (difficulty === 5) {
+            winCond += 2;
+            if (winCond === 16) {
+                scorePanel.style.display = "none";
+                congratulationMsg.style.display = "flex";
+                congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
+                if (localStorage.getItem('highScoreMedEng1') === '0') {
+                    localStorage.setItem('highScoreMedEng1', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng1'))) {
+                    localStorage.setItem('highScoreMedEng3', localStorage.getItem('highScoreMedEng2'));
+                    localStorage.setItem('highScoreMedEng2', localStorage.getItem('highScoreMedEng1'));
+                    localStorage.setItem('highScoreMed1', moves);
+                } else if (localStorage.getItem('highScoreMedEng2') === '0') {
+                    localStorage.setItem('highScoreMedEng2', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng2'))) {
+                    localStorage.setItem('highScoreMedEng3', localStorage.getItem('highScoreMedEng2'));
+                    localStorage.setItem('highScoreMed2', moves);
+                } else if (localStorage.getItem('highScoreMedEng3') === '0') {
+                    localStorage.setItem('highScoreMedEng3', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreMedEng3'))) {
+                    localStorage.setItem('highScoreMed3', moves);
+                }
+            }
+        }
+        if (difficulty === 1) {
+            winCond += 2;
+            if (winCond === 20) {
+                scorePanel.style.display = "none";
+                congratulationMsg.style.display = "flex";
+                congratulationMsg.innerHTML = "<h2>Grattis, du klarade spelomgången på " + minute + " minuter & " + second + " sekunder med hjälp av " + moves + " drag!</h2>";
+                if (localStorage.getItem('highScoreHardEng1') === '0') {
+                    localStorage.setItem('highScoreHardEng1', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng1'))) {
+                    localStorage.setItem('highScoreHardEng3', localStorage.getItem('highScoreHardEng2'));
+                    localStorage.setItem('highScoreHardEng2', localStorage.getItem('highScoreHardEng1'));
+                    localStorage.setItem('highScoreHardEng1', moves);
+                } else if (localStorage.getItem('highScoreHardEng2') === '0') {
+                    localStorage.setItem('highScoreHardEng2', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng2'))) {
+                    localStorage.setItem('highScoreHardEng3', localStorage.getItem('highScoreHard2'));
+                    localStorage.setItem('highScoreHardEng2', moves);
+                } else if (localStorage.getItem('highScoreHardEng3') === '0') {
+                    localStorage.setItem('highScoreHardEng3', moves);
+                } else if (moves <= parseInt(localStorage.getItem('highScoreHardEng3'))) {
+                    localStorage.setItem('highScoreHardEng3', moves);
+                }
+            }
+        }
+    }
+};
 
