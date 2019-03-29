@@ -47,7 +47,7 @@ highScores.addEventListener('click', function () {
     document.getElementById('engMed2ndBest').innerHTML=localStorage.getItem('highScoreMedEng2');
     document.getElementById('engMed3rdBest').innerHTML=localStorage.getItem('highScoreMedEng3');
 
-    document.getElementById('engHardBest').innerHTML=localStorage.getItem('highScoreHardEng2');
+    document.getElementById('engHardBest').innerHTML=localStorage.getItem('highScoreHardEng1');
     document.getElementById('engHard2ndBest').innerHTML=localStorage.getItem('highScoreHardEng2');
     document.getElementById('engHard3rdBest').innerHTML=localStorage.getItem('highScoreHardEng3');
 });
